@@ -1,0 +1,15 @@
+{% extends "base.html" %}{% block content %}
+<article>
+  <section id="post">
+    {% for post in posts['posts']|sort(attribute='date', reverse = True) %}
+    <ul>
+      <li class="gradient">
+        <p class="title"><strong>{{ post['title'] }}</strong></p>
+        <p class="post">{{ post['body'] }}</p>
+        <p class="date">{{ post['date'] }}</p>
+      </li>
+    </ul>
+    {% endfor %}
+  </section>
+</article>
+{% endblock %}

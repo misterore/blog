@@ -1,0 +1,16 @@
+{% extends "base.html" %}{% block content %}
+<section id="intro">
+  <div>
+    <img
+      src="{{ url_for('static', filename='images/IMG_2067_polarr.jpeg')}}"
+      alt="picture"
+    />
+  </div>
+  {% for data in admin['admin'] %}
+  <p class="name">
+    Hello visitor! Welcome to {{ data['Name'] }}'s blog. I develop websites. I'm
+    Learning Python and Web development with flask.
+  </p>
+  {% endfor %}
+</section>
+{% endblock %}

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    {% if title %}
+    <title>{{ title }} - Oreoluwa's blog</title>
+    {% else %}
+    <title>Welcome to Microblog!</title>
+    {% endif %}
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{{ url_for('static', filename='css/style.css')}}"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Oxygen&family=Oxygen+Mono&family=Shizuru&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/cd686ecfe6.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <nav>
+      <ul>
+        <li>
+          <h1><a href="/homepage">OREOLUWA AINA'S BLOG</a></h1>
+        </li>
+        <li><a href="/homepage">Home</a></li>
+        <li><a href="/create">Create</a></li>
+        <li><a href="/about">About me</a></li>
+      </ul>
+    </nav>
+    <div class="gradient"></div>
+    {% block content %}{% endblock %}
+    <div class="gradient"></div>
+    <footer>
+      <h2>Oreoluwa Aina</h2>
+      <ul>
+        <li>
+          <a href="https://twitter.com/MisterOre" target="_blank"
+            ><span class="fab fa-twitter" aria-hidden="true"></span
+            ><span class="sr-only">Twitter</span></a
+          >
+        </li>
+        <li>
+          <a href="https://github.com/misterore" target="_blank"
+            ><span class="fab fa-github"></span
+            ><span class="sr-only">Github</span></a
+          >
+        </li>
+        <li>
+          <a
+            href="https://www.linkedin.com/in/oreoluwa-aina-a98652224/"
+            target="_blank"
+            ><span class="fab fa-linkedin-in"></span
+            ><span class="sr-only">linkedin</span></a
+          >
+        </li>
+        <li>
+          <a href="mailto:ijamoaina@gmail.com">
+            <span class="fas fa-envelope" aria-hidden="true"></span>
+            <span class="sr-only">Email</span>
+          </a>
+        </li>
+      </ul>
+      <p><small>©️2022 Oreoluwa Aina. All rights reserved.</small></p>
+    </footer>
+  </body>
+</html>

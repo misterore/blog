@@ -1,0 +1,28 @@
+{% extends "base.html" %}{% block content %}
+<section id="create">
+  <h2>New Post:</h2>
+  <form action="/" method="POST" enctype="multipart/form-data">
+    <ul>
+      <li>
+        <label for="header">Header:</label>
+        <input type="text" name="header" required /><br />
+      </li>
+      <li>
+        <label for="post">Post:</label>
+        <textarea name="post" id="" cols="30" rows="10" required></textarea
+        ><br />
+      </li>
+      <li>
+        <label for="date">Date:</label>
+        <input type="datetime-local" name="date" value="" required /><br />
+      </li>
+      <li>
+        <label for="image">Image:</label>
+        <input type="file" name="image" /><br />
+      </li>
+      <button type="submit">submit</button>
+    </ul>
+  </form>
+</section>
+
+{% endblock %}
