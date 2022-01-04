@@ -1,40 +1,40 @@
 {
-    "posts": [
-        {
-            "body": "Oreoluwa Aina",
-            "date": "2021-12-12 T20:52",
-            "id": 1,
-            "title": "Ijamoaina@gmail.com"
-        },
-        {
-            "body": null,
-            "date": "2021-12-24 T15:58",
-            "id": 2,
-            "title": "Football"
-        },
-        {
-            "body": "epl is back",
-            "date": "2021-12-24 T16:02",
-            "id": 3,
-            "title": "Football"
-        },
-        {
-            "body": "Always stick to family.",
-            "date": "2021-12-25 T16:22",
-            "id": 4,
-            "title": "Family"
-        },
-        {
-            "body": "Flask is a lightweight Python framework for web applications that provides the basics for URL routing and page rendering.\r\n\r\nFlask is called a \"micro\" framework because it doesn't directly provide features like form validation, database abstraction, authentication, and so on. Such features are instead provided by special Python packages called Flask extensions. The extensions integrate seamlessly with Flask so that they appear as if they were part of Flask itself. For example, Flask doesn't provide a page template engine, but installing Flask includes the Jinja templating engine by default. For convenience, we typically speak of these defaults as part of Flask.\r\n\r\nIn this Flask tutorial, you create a simple Flask app with three pages that use a common base template. Along the way, you experience a number of features of Visual Studio Code including using the terminal, the editor, the debugger, code snippets, and more.\r\n\r\nThe completed code project for this Flask tutorial can be found on GitH",
-            "date": "2021-12-28 T12:46",
-            "id": 5,
-            "title": "Practice"
-        },
-        {
-            "body": "XCVVFSVF",
-            "date": "2021-12-28T15:17",
-            "id": 6,
-            "title": "Welcome to virginia "
-        }
-    ]
+  "posts": [
+    {
+      "body": "Oreoluwa Aina",
+      "date": "2021-12-12 T20:52",
+      "id": 1,
+      "title": "Ijamoaina@gmail.com"
+    },
+    {
+      "body": null,
+      "date": "2021-12-24 T15:58",
+      "id": 2,
+      "title": "Football"
+    },
+    {
+      "body": "epl is back",
+      "date": "2021-12-24 T16:02",
+      "id": 3,
+      "title": "Football"
+    },
+    {
+      "body": "Always stick to family.",
+      "date": "2021-12-25 T16:22",
+      "id": 4,
+      "title": "Family"
+    },
+    {
+      "body": "Flask is a lightweight Python framework for web applications that provides the basics for URL routing and page rendering.\r\n\r\nFlask is called a \"micro\" framework because it doesn't directly provide features like form validation, database abstraction, authentication, and so on. Such features are instead provided by special Python packages called Flask extensions. The extensions integrate seamlessly with Flask so that they appear as if they were part of Flask itself. For example, Flask doesn't provide a page template engine, but installing Flask includes the Jinja templating engine by default. For convenience, we typically speak of these defaults as part of Flask.\r\n\r\nIn this Flask tutorial, you create a simple Flask app with three pages that use a common base template. Along the way, you experience a number of features of Visual Studio Code including using the terminal, the editor, the debugger, code snippets, and more.\r\n\r\nThe completed code project for this Flask tutorial can be found on GitH",
+      "date": "2021-12-28 T12:46",
+      "id": 5,
+      "title": "Practice"
+    },
+    {
+      "body": "XCVVFSVF",
+      "date": "2021-12-28T15:17",
+      "id": 6,
+      "title": "Welcome to virginia "
+    }
+  ]
 }

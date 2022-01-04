@@ -1,7 +1,6 @@
 import os
-from datetime import date
 
-from flask import (flash, json, redirect, render_template, request,
+from flask import (json, redirect, render_template, request,
                    url_for)
 from werkzeug.utils import secure_filename
 
@@ -37,15 +36,26 @@ def write_json(data, filename="data.json"):
         json.dump(data, outfile, indent=4)
 
 
+def open_admin_json():
+    json_admin_file = open('admin.json', 'r')
+    json_admin = json_admin_file.read()
+    admin = json.loads(json_admin)
+    return admin
+
+
+def open_data_json():
+    json_data_file = open('data.json', 'r')
+    json_data = json_data_file. read()
+    data = json.loads(json_data)
+    return data
+
+
 @app.route('/')
 @app.route('/homepage', methods=['GET', 'POST'])
 def homepage():
     # Read data json file
-    json_data_file = open('data.json', 'r')
-    json_data = json_data_file. read()
-    posts = json.loads(json_data)
-
-    return render_template('homepage.html', title='Home', posts=posts, Post=request.form.get('post'), Header=request.form.get('header'), date=request.form.get('date'))
+    data = open_data_json()
+    return render_template('homepage.html', title='Home', data=data)
 
 
 @app.route('/', methods=['POST'])
@@ -83,8 +93,17 @@ def create():
 @app.route('/about')
 def about():
     # Read admin json file
-    json_admin_file = open('admin.json', 'r')
-    json_admin = json_admin_file.read()
-    admin = json.loads(json_admin)
-
+    admin = open_admin_json()
     return render_template('about.html', title='about me', admin=admin)
+
+
+@app.route('/summary')
+def summary():
+    data = open_data_json()
+    return render_template('summary.html', title='summary', data=data)
+
+
+@app.route('/details')
+def details():
+    data = open_data_json()
+    return render_template('details.html', title='details', data=data)

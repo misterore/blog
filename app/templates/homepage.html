@@ -1,12 +1,12 @@
 {% extends "base.html" %}{% block content %}
 <article>
   <section id="post">
-    {% for post in posts['posts']|sort(attribute='date', reverse = True) %}
+    {% for posts in data['posts']|sort(attribute='date', reverse = True) %}
     <ul>
       <li class="gradient">
-        <p class="title"><strong>{{ post['title'] }}</strong></p>
-        <p class="post">{{ post['body'] }}</p>
-        <p class="date">{{ post['date'] }}</p>
+        <p class="title"><strong>{{ posts['title'] }}</strong></p>
+        <p class="post">{{ posts['body'] }}</p>
+        <p class="date">{{ posts['date'] }}</p>
       </li>
     </ul>
     {% endfor %}
