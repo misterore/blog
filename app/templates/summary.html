@@ -2,7 +2,7 @@
 <section>
   <ul>
     {% for posts in data['posts']|sort(attribute='date', reverse = True) %}
-    <li><a href="{{ url_for('summary')}}">{{ posts['title'] }}</a></li>
+    <li><a href="{{ url_for('details')}}">{{ posts['title'] }}</a></li>
     {% endfor %}
   </ul>
 </section>
