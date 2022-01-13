@@ -1,1 +1,14 @@
-{% extends "base.html" %}{% block content %} {% endblock %}
+{% extends "base.html" %}{% block content %}
+<section id="details">
+  <img src="{{ url_for('static', filename=( post_picture ))}}" alt="img" />
+  <h2>{{ post_header }}</h2>
+  <p>
+    <span>🗓<span class="date">{{ post_date }}</span></span>
+  </p>
+  <p>{{ post_body }}</p>
+  <div>
+    <button><a href="{{ url_for('edit_post',postid=id)}}">Edit</a></button>
+    <button><a href="{{ url_for('delete',postid=id)}}">Delete</a></button>
+  </div>
+</section>
+{% endblock %}

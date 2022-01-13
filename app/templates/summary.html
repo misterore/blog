@@ -2,7 +2,13 @@
 <section>
   <ul>
     {% for posts in data['posts']|sort(attribute='date', reverse = True) %}
-    <li><a href="{{ url_for('details')}}">{{ posts['title'] }}</a></li>
+    <li>
+      <form action="/details" method="get">
+        <a href="{{ url_for('details',postid=( posts['id'] )) }}"
+          >{{ posts['title'] }}</a
+        >
+      </form>
+    </li>
     {% endfor %}
   </ul>
 </section>

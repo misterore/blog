@@ -1,4 +1,4 @@
-c
+{% extends "base.html" %}{% block content %}
 <section id="intro">
   <div>
     <img
@@ -12,7 +12,7 @@ c
       Hello visitor! Welcome to {{ data['Name'] }}'s blog. I develop websites.
       I'm Learning Python and Web development with flask.
     </p>
-    <a href="{{ url_for('details')}}">Summary</a>
+    <a href="{{ url_for('summary')}}">Entries</a>
     {% endfor %}
   </div>
 </section>

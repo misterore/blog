@@ -1,0 +1,25 @@
+{% extends "base.html" %}{% block content %}
+<form
+  action="{{ url_for('edit',postid=id) }}"
+  method="POST"
+  enctype="multipart/form-data"
+>
+  <ul>
+    <li>
+      <label for="edit_header">Header:</label>
+      <input type="text" name="edit_header" value="{{ post_header }}" /><br />
+    </li>
+    <li>
+      <label for="edit_post">Post:</label>
+      <textarea name="edit_post" id="" cols="30" rows="10">
+{{ post_body }}</textarea
+      ><br />
+    </li>
+    <li>
+      <label for="image">Image:</label>
+      <input type="file" name="image" /><br />
+    </li>
+    <button type="submit">submit</button>
+  </ul>
+</form>
+{% endblock %}
