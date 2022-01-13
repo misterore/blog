@@ -2,7 +2,6 @@ import os
 
 from flask import (json, redirect, render_template, request,
                    url_for)
-from flask.sessions import NullSession
 from werkzeug.utils import secure_filename
 
 from app import app
