@@ -71,18 +71,29 @@ def uploads():
             filename = secure_filename(file.filename)
             file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
             image = str('images/'+filename)
+            data = read_data_json()
+            id_count = (count_id() + 1)
+            y = {"date": request.form.get('date'),
+                 "title": request.form.get('header'),
+                 "body": request.form.get('post'),
+                 "id": id_count,
+                 "image": image
+                 }
+            data["posts"].append(y)
+            write_json(data)
+        else:
+            data = read_data_json()
+            id_count = (count_id() + 1)
+            y = {"date": request.form.get('date'),
+                 "title": request.form.get('header'),
+                 "body": request.form.get('post'),
+                 "id": id_count,
+                 "image": ""
+                 }
+            data["posts"].append(y)
+            write_json(data)
 
         # Appends the new data to the data json file
-        data = read_data_json()
-        id_count = (count_id() + 1)
-        y = {"date": request.form.get('date'),
-             "title": request.form.get('header'),
-             "body": request.form.get('post'),
-             "id": id_count,
-             "image": image
-             }
-        data["posts"].append(y)
-        write_json(data)
 
     return redirect(url_for('homepage'))
 
@@ -119,7 +130,10 @@ def details():
     post_header = temp[id]['title']
     post_body = temp[id]['body']
     post_date = temp[id]['date']
-    post_picture = temp[id]['image']
+    if temp[id]['image'] == "":
+        post_picture = ""
+    else:
+        post_picture = temp[id]['image']
 
     return render_template('details.html', title='details', post_header=post_header, post_body=post_body, post_date=post_date, data=data, id=id, post_picture=post_picture)
 

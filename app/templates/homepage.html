@@ -1,19 +1,32 @@
 {% extends "base.html" %}{% block content %}
-<article>
-  <section id="post">
-    {% for posts in data['posts']|sort(attribute='date', reverse = True) %}
-    <ul>
-      <li class="gradient">
-        <img
-          src="{{ url_for('static', filename=( posts['image'] ))}}"
-          alt="img"
-        />
-        <p class="title"><strong>{{ posts['title'] }}</strong></p>
-        <p class="post">{{ posts['body'] }}</p>
-        <p class="date">{{ posts['date'] }}</p>
-      </li>
-    </ul>
-    {% endfor %}
-  </section>
-</article>
+<section id="main-content" class="wrapper">
+  {% for posts in data['posts']|sort(attribute='date', reverse = True) %}
+  <div class="content">
+    <div class="left-side">
+      {% if posts['image'] %}
+      <img
+        src="{{ url_for('static', filename=( posts['image'] ))}}"
+        alt="img"
+      />
+      {% else %}
+      <img
+        src="{{ url_for('static', filename='images/No-Image-Placeholder.svg.png')}}"
+        alt="no image"
+      />
+      {% endif %}
+    </div>
+
+    <div class="right-side">
+      <div class="title one">
+        <h2>
+          <a href="{{ url_for('details',postid=( posts['id'] )) }}"
+            >{{ posts['title'] }}</a
+          >
+        </h2>
+      </div>
+      <div class="date two"><span>{{ posts['date'] }}</span></div>
+    </div>
+  </div>
+  {% endfor %}
+</section>
 {% endblock %}

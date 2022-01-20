@@ -1,6 +1,9 @@
 {% extends "base.html" %}{% block content %}
 <section id="details">
-  <img src="{{ url_for('static', filename=( post_picture ))}}" alt="img" />
+  <img
+    src="{{ url_for('static', filename=( post_picture ))}}"
+    alt="no image  "
+  />
   <h2>{{ post_header }}</h2>
   <p>
     <span>🗓<span class="date">{{ post_date }}</span></span>
